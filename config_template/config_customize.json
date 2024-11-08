@@ -543,7 +543,7 @@
 	"type": "local",
 	"tag": "self_direct",
 	"format": "source",
-	path": "self_direct.json"
+	"path": "self_direct.json"
       },
       {
         "type": "local",

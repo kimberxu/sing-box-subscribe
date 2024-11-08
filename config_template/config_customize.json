@@ -22,7 +22,6 @@
       {
         "tag": "proxyDns",
         "address": "tls://8.8.8.8",
-        "detour": "Proxy"
       },
       {
         "tag": "localDns",
@@ -97,7 +96,13 @@
       "outbounds":[
         "auto",
         "direct",
-        "{all}"
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "指定节点",
+        "省流"
       ]
     },
     {
@@ -108,7 +113,7 @@
         "Singapore",
         "Japan",
         "America",
-        "Others"
+        "指定节点"
       ],
       "default": "America"
     },
@@ -121,7 +126,7 @@
         "Singapore",
         "Japan",
         "America",
-        "Others"
+        "指定节点"
       ]
     },
     {
@@ -133,7 +138,7 @@
         "Singapore",
         "Japan",
         "America",
-        "Others"
+        "指定节点"
       ]
     },
     {
@@ -145,7 +150,7 @@
         "Singapore",
         "Japan",
         "America",
-        "Others"
+        "指定节点"
       ]
     },
     {
@@ -157,7 +162,7 @@
         "Singapore",
         "Japan",
         "America",
-        "Others"
+        "指定节点"
       ]
     },
     {
@@ -186,7 +191,7 @@
         "Singapore",
         "Japan",
         "America",
-        "Others"
+        "指定节点"
       ],
       "default": "America"
     },
@@ -211,7 +216,7 @@
         "Singapore",
         "Japan",
         "America",
-        "Others"
+        "指定节点"
       ]
     },
     {
@@ -223,7 +228,7 @@
         "Singapore",
         "Japan",
         "America",
-        "Others"
+        "指定节点"
       ]
     },
     {
@@ -236,7 +241,7 @@
         "Singapore",
         "Japan",
         "America",
-        "Others"
+        "指定节点"
       ]
     },
     {
@@ -249,7 +254,7 @@
         "Singapore",
         "Japan",
         "America",
-        "Others"
+        "指定节点"
       ]
     },
     {
@@ -262,7 +267,7 @@
         "Singapore",
         "Japan",
         "America",
-        "Others"
+        "指定节点"
       ]
     },
     {
@@ -274,7 +279,7 @@
         "Singapore",
         "Japan",
         "America",
-        "Others"
+        "指定节点"
       ]
     },
     {
@@ -286,7 +291,7 @@
         "Singapore",
         "Japan",
         "America",
-        "Others",
+        "指定节点",
         "direct"
       ]
     },
@@ -307,28 +312,47 @@
       ]
     },
     {
+      "tag":"省流",
+      "type":"urltest",
+      "outbounds":[
+        "{all}"
+      ],
+      "filter":[
+        {"action":"include","keywords":["0.1x|0.2x|0.3x|0.4x|0.5x"]}
+      ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "10m",
+      "tolerance": 50
+    },
+    {
       "tag":"HongKong",
-      "type":"selector",
+      "type":"urltest",
       "outbounds":[
         "{all}"
       ],
       "filter":[
         {"action":"include","keywords":["🇭🇰|HK|hk|香港|港|HongKong"]}
-      ]
+      ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "10m",
+      "tolerance": 50
     },
     {
       "tag":"TaiWan",
-      "type":"selector",
+      "type":"urltest",
       "outbounds":[
         "{all}"
       ],
       "filter":[
         {"action":"include","keywords":["🇹🇼|TW|tw|台湾|臺灣|台|Taiwan"]}
-      ]
+      ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "10m",
+      "tolerance": 50
     },
     {
       "tag":"Singapore",
-      "type":"selector",
+      "type":"urltest",
       "outbounds":[
         "{all}"
       ],
@@ -338,32 +362,35 @@
     },
     {
       "tag":"Japan",
-      "type":"selector",
+      "type":"urltest",
       "outbounds":[
         "{all}"
       ],
       "filter":[
         {"action":"include","keywords":["🇯🇵|JP|jp|日本|日|Japan"]}
-      ]
+      ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "10m",
+      "tolerance": 50
     },
     {
       "tag":"America",
-      "type":"selector",
+      "type":"urltest",
       "outbounds":[
         "{all}"
       ],
       "filter":[
         {"action":"include","keywords":["🇺🇸|US|us|美国|美|United States"]}
-      ]
+      ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "10m",
+      "tolerance": 50
     },
     {
-      "tag":"Others",
+      "tag":"指定节点",
       "type":"selector",
       "outbounds":[
         "{all}"
-      ],
-      "filter":[
-        {"action":"exclude","keywords":["🇭🇰|HK|hk|香港|香|🇹🇼|TW|tw|台湾|台|🇸🇬|SG|sg|新加坡|狮|🇯🇵|JP|jp|日本|日|🇺🇸|US|us|美国|美"]}
       ]
     },
     {
@@ -373,11 +400,21 @@
         "{all}"
       ],
       "filter":[
-        {"action":"exclude","keywords":["网站|地址|剩余|过期|时间|有效"]}
+        {"action":"exclude","keywords":["网站|地址|剩余|过期|到期|套餐|重置|时间|有效"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
       "tolerance": 50
+    },
+    {
+      "tag":"节点信息",
+      "type":"selector",
+      "outbounds":[
+        "{all}"
+      ],
+      "filter":[
+        {"action":"include","keywords":["网站|地址|剩余|过期|到期|套餐|重置|时间|有效"]}
+      ]
     },
     {
       "type": "direct",
@@ -394,7 +431,6 @@
   ],
   "route": {
     "auto_detect_interface": true,
-    "final": "Proxy",
     "rules": [
       {
         "type": "logical",
@@ -499,11 +535,28 @@
         "outbound": "Global"
       },
       {
-        "rule_set": ["geoip-cn", "geosite-cn"],
+        "rule_set": ["geoip-cn", "geosite-cn", "self_direct"],
         "outbound": "China"
+      },
+      {
+        "rule_set": ["self_direct"],
+        "outbound": "direct"
       }
     ],
+    "final": "Proxy",
     "rule_set": [
+      {
+				"type": "local",
+				"tag": "self_direct",
+				"format": "source",
+				"path": "self_direct.json"
+      },
+  		{
+				"type": "local",
+				"tag": "self_proxy",
+				"format": "source",
+				"path": "self_proxy.json"
+			},
       {
         "tag": "geosite-category-ads-all",
         "type": "remote",

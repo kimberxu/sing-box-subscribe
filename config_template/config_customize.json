@@ -452,6 +452,14 @@
         "outbound": "Proxy"
       },
       {
+        "rule_set": ["self_direct"],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": ["self_proxy"],
+        "outbound": "Proxy"
+      }
+      {
         "domain": [
           "clash.razord.top",
           "yacd.metacubex.one",
@@ -531,10 +539,6 @@
       {
         "rule_set": ["geoip-cn", "geosite-cn"],
         "outbound": "China"
-      },
-      {
-        "rule_set": ["self_direct"],
-        "outbound": "direct"
       }
     ],
     "final": "Proxy",

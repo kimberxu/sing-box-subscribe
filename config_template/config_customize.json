@@ -59,28 +59,53 @@
   },
   "inbounds": [
     {
-      "type": "tun",
-      "address": "172.19.0.1/30",
-      "mtu": 9000,
-      "auto_route": true,
-      "strict_route": true,
-      "sniff": true,
-      "endpoint_independent_nat": false,
-      "stack": "system",
-      "platform": {
-        "http_proxy": {
-          "enabled": true,
-          "server": "127.0.0.1",
-          "server_port": 2080
-        }
-      }
-    },
-    {
       "type": "mixed",
-      "listen": "127.0.0.1",
-      "listen_port": 2080,
+      "tag": "mixed-in",
+      "listen": "::",
+      "listen_port": 7890,
+	  
+      "sniff": false
+    }, {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "::",
+      "listen_port": 1053
+    }, {
+      "type": "redirect",
+      "tag": "redirect-in",
+      "listen": "::",
+      "listen_port": 7892,
       "sniff": true,
-      "users": []
+      "sniff_override_destination": false
+    }, {
+      "type": "tproxy",
+      "tag": "tproxy-in",
+      "listen": "::",
+      "listen_port": 7893,
+      "sniff": true,
+      "sniff_override_destination": false
+    }, {
+      "type": "tun",
+      "tag": "tun-in",
+      "interface_name": "utun",
+      "address": [
+        "172.19.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "route_address": [
+        "0.0.0.0/1",
+        "128.0.0.0/1",
+        "::/1",
+        "8000::/1"
+      ],
+      "route_exclude_address": [
+        "192.168.0.0/16",
+        "fc00::/7"
+      ],
+      "auto_route": false,
+      "stack": "system",
+      "sniff": true,
+      "sniff_override_destination": false
     }
   ],
   "outbounds": [
@@ -544,16 +569,18 @@
     "final": "Proxy",
     "rule_set": [
       {
-	"type": "local",
-	"tag": "self_direct",
-	"format": "source",
-	"path": "self_direct.json"
+        "tag": "self_direct",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://bbb.luckyday.us.kg/d.srs",
+        "download_detour": "direct"
       },
       {
-        "type": "local",
-	"tag": "self_proxy",
-	"format": "source",
-	"path": "self_proxy.json"
+        "tag": "self_proxy",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://bbb.luckyday.us.kg/p.srs",
+        "download_detour": "direct"
       },
       {
         "tag": "geosite-category-ads-all",

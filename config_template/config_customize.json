@@ -572,14 +572,14 @@
         "tag": "self_direct",
         "type": "remote",
         "format": "binary",
-        "url": "https://bbb.luckyday.us.kg/d.srs",
+        "url": "https://bbb.20241108.xyz/d.srs",
         "download_detour": "direct"
       },
       {
         "tag": "self_proxy",
         "type": "remote",
         "format": "binary",
-        "url": "https://bbb.luckyday.us.kg/p.srs",
+        "url": "https://bbb.20241108.xyz/p.srs",
         "download_detour": "direct"
       },
       {

@@ -150,7 +150,7 @@
       "tag":"Google",
       "type":"selector",
       "outbounds":[
-	"Proxy",
+	    "Proxy",
         "HongKong",
         "TaiWan",
         "Singapore",
@@ -163,7 +163,7 @@
       "tag":"Telegram",
       "type":"selector",
       "outbounds":[
-	"Proxy",
+	    "Proxy",
         "HongKong",
         "TaiWan",
         "Singapore",
@@ -176,7 +176,7 @@
       "tag":"Twitter",
       "type":"selector",
       "outbounds":[
-	"Proxy",
+	    "Proxy",
         "HongKong",
         "TaiWan",
         "Singapore",
@@ -189,7 +189,7 @@
       "tag":"Facebook",
       "type":"selector",
       "outbounds":[
-	"Proxy",
+    	"Proxy",
         "HongKong",
         "TaiWan",
         "Singapore",
@@ -244,7 +244,7 @@
       "tag":"Netflix",
       "type":"selector",
       "outbounds":[
-	"Proxy",
+	    "Proxy",
         "HongKong",
         "TaiWan",
         "Singapore",

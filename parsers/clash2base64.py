@@ -185,7 +185,7 @@ def clash2v2ray(share_link):
             "fp": share_link.get('client-fingerprint', ''),
             "type": share_link.get('network', 'tcp'),
             "flow": share_link.get('flow', ''),
-            'allowInsecure': '0' if share_link.get('skip-cert-verify') == False else '1',
+            'allowInsecure': '1' if share_link.get('skip-cert-verify') == True else '0',
             "name": quote(share_link['name'], 'utf-8')
         }
         if share_link.get('tls') == False:
@@ -260,10 +260,11 @@ def clash2v2ray(share_link):
         return link
         # TODO
     elif share_link['type'] == 'hysteria2':
-        link = "hysteria2://{auth}@{server}:{port}?insecure={allowInsecure}&obfs={obfs}&obfs-password={obfspassword}&pinSHA256={fingerprint}&sni={sni}&alpn={alpn}&upmbps={upmbps}&downmbps={downmbps}#{name}".format(
+        link = "hysteria2://{auth}@{server}:{port}{ports}?insecure={allowInsecure}&obfs={obfs}&obfs-password={obfspassword}&pinSHA256={fingerprint}&sni={sni}&alpn={alpn}&upmbps={upmbps}&downmbps={downmbps}#{name}".format(
         auth = share_link.get('password', share_link.get('auth', '')),
         server = share_link['server'],
         port = share_link['port'],
+        ports=",{}".format(share_link['ports']) if share_link.get('ports') else '',
         allowInsecure = '0' if share_link.get('skip-cert-verify', '') == False else '1',
         obfs = share_link.get('obfs', 'none'),
         obfspassword = share_link.get('obfs-password', ''),
@@ -339,6 +340,22 @@ def clash2v2ray(share_link):
         link = f"socks://{base_link}"
         if share_link.get('name'):
             link += f"#{share_link['name']}"
+        return link
+        # TODO
+    elif share_link['type'] == 'anytls':
+        link = "anytls://{auth}@{server}:{port}?idleSessionCheckInterval={idleSessionCheckInterval}&idleSessionTimeout={idleSessionTimeout}&minIdleSession={minIdleSession}&alpn={alpn}&fp={fp}&insecure={allowInsecure}&peer={sni}#{name}".format(
+        server = share_link['server'],
+        port = share_link['port'],
+        auth = share_link['password'],
+        idleSessionCheckInterval = share_link.get('idle-session-check-interval', ''),
+        idleSessionTimeout = share_link.get('idle-session-timeout', ''),
+        minIdleSession = share_link.get('min-idle-session', ''),
+        alpn = quote(','.join(share_link.get('alpn', '')), 'utf-8'),
+        fp = share_link.get('client-fingerprint', ''),
+        allowInsecure = '1' if share_link.get('skip-cert-verify', '') == True else '0',
+        sni = share_link.get('sni', ''),
+        name = share_link['name'].encode('utf-8', 'surrogatepass').decode('utf-8')
+        )
         return link
         # TODO
     return link

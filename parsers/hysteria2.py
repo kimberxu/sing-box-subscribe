@@ -10,6 +10,7 @@ def parse(data):
     )
     if server_info.path:
       server_info = server_info._replace(netloc=server_info.netloc + server_info.path, path="")
+    ports_match = re.search(r',(\d+-\d+)', server_info.netloc)
     node = {
         'tag': unquote(server_info.fragment) or tool.genName()+'_hysteria2',
         'type': 'hysteria2',
@@ -24,11 +25,15 @@ def parse(data):
             'insecure': False
         }
     }
+    if ports_match:
+        node['server_ports'] = [ports_match.group(1).replace('-', ':')]
     if netquery.get('insecure') in ['1', 'true'] or netquery.get('allowInsecure') == '1':
         node['tls']['insecure'] = True
-    if node['tls']['server_name'] == '':
+    if not node['tls'].get('server_name'):
         del node['tls']['server_name']
         node['tls']['insecure'] = True
+    elif node['tls']['server_name'] == 'None':
+        del node['tls']['server_name']
     node['tls']['alpn'] = (netquery.get('alpn') or "h3").strip('{}').split(',')
     if netquery.get('obfs', '') not in ['none', '']:
         node['obfs'] = {

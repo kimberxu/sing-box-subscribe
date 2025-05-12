@@ -113,11 +113,11 @@
       "tag":"Proxy",
       "type":"selector",
       "outbounds":[
-        "HongKong",
         "auto",
         "direct",
         "TaiWan",
         "Singapore",
+        "HongKong",
         "Japan",
         "America",
         "指定节点",

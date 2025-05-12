@@ -122,7 +122,8 @@
         "America",
         "指定节点",
         "省流"
-      ]
+      ],
+      "default": "Singapore"
     },
     {
       "tag":"节点信息",
@@ -150,7 +151,7 @@
       "tag":"Google",
       "type":"selector",
       "outbounds":[
-	    "Proxy",
+	"Proxy",
         "HongKong",
         "TaiWan",
         "Singapore",
@@ -163,7 +164,7 @@
       "tag":"Telegram",
       "type":"selector",
       "outbounds":[
-	    "Proxy",
+	"Proxy",
         "HongKong",
         "TaiWan",
         "Singapore",
@@ -176,7 +177,7 @@
       "tag":"Twitter",
       "type":"selector",
       "outbounds":[
-	    "Proxy",
+	"Proxy",
         "HongKong",
         "TaiWan",
         "Singapore",
@@ -244,7 +245,7 @@
       "tag":"Netflix",
       "type":"selector",
       "outbounds":[
-	    "Proxy",
+	"Proxy",
         "HongKong",
         "TaiWan",
         "Singapore",
@@ -328,7 +329,8 @@
         "America",
         "指定节点",
         "direct"
-      ]
+      ],
+      "default": "Proxy"
     },
     {
       "tag":"China",

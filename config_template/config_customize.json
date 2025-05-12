@@ -319,7 +319,8 @@
     {
       "tag":"Global",
       "type":"selector",
-      "outbounds":[ 
+      "outbounds":[
+    	"Proxy",
         "HongKong",
         "TaiWan",
         "Singapore",

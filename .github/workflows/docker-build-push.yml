@@ -1,30 +1,26 @@
 name: Docker Build and Push
 
 on:
-  push:
-    branches: [ "main" ] # 监听 main 分支的 push 事件
-    paths: # 可选：只有特定文件变更时才触发
-      - '**/Dockerfile'
-      - '**/*.py'
-      - '**/requirements.txt'
+  workflow_dispatch: # 仅允许手动触发
+    inputs:
+      skip_cache:
+        description: 'Skip Docker build cache?'
+        required: false
+        default: 'false'
+        type: boolean
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write # 如果推送到 GitHub Container Registry 需要这个权限
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Log in to Container Registry
+      - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
-          registry: ghcr.io # 使用 GitHub Container Registry
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }} # 从 Repository Secrets 读取
+          password: ${{ secrets.DOCKERHUB_TOKEN }}     # 需要先在仓库设置中添加
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
@@ -32,5 +28,8 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}:latest
-            ghcr.io/${{ github.repository }}:${{ github.sha }}
+            kimber8932/sing-box-subscribe:latest
+            kimber8932/sing-box-subscribe:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          no-cache: ${{ inputs.skip_cache }} # 可选缓存控制

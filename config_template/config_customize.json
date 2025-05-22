@@ -123,7 +123,7 @@
         "指定节点",
         "省流"
       ],
-      "default": "Singapore"
+      "default": "HongKong"
     },
     {
       "tag":"节点信息",
@@ -371,8 +371,8 @@
         {"action":"include","keywords":["🇭🇰|HK|hk|香港|港|HongKong"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
-      "interval": "5m",
-      "tolerance": 75
+      "interval": "4m",
+      "tolerance": 50
     },
     {
       "tag":"TaiWan",
@@ -395,7 +395,10 @@
       ],
       "filter":[
         {"action":"include","keywords":["🇸🇬|SG|sg|新加坡|狮|Singapore"]}
-      ]
+      ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "10m",
+      "tolerance": 50
     },
     {
       "tag":"Japan",

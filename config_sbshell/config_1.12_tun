@@ -20,32 +20,29 @@
   },
   "dns": {
     "servers": [
-      {
-        "tag": "dns_proxy",
-        "type": "tls",
-        "server": "8.8.8.8",
-        "detour": "🚀 节点选择"
-      },
-      {
-        "tag": "dns_direct",
-        "type": "https",
-        "server": "https://dns.alidns.com/dns-query",
-        "domain_resolver": "dns_resolver",
-        "detour": "➡️ 直连"
-      },      
-      {
-        "tag": "dns_resolver",
-        "type": "udp",
-        "server": "211.136.192.6",
-        "detour": "➡️ 直连"
-      },
-      {
-        "tag": "dns_adguardhome",
-        "type": "udp",
-        "server": "192.168.1.6",
-        "detour": "➡️ 直连"
-      }
-    ],
+            {
+                "tag": "dns_proxy",
+                "type": "tls",
+                "server": "8.8.8.8",
+                "detour": "🚀 节点选择"
+            },
+            {
+                "tag": "dns_direct",
+                "type": "https",
+                "server": "dns.alidns.com",
+                "domain_resolver": "dns_resolver"
+         },
+            {
+                "tag": "dns_resolver",
+                "type": "udp",
+                "server": "211.136.192.6"
+            },
+            {
+                "tag": "dns_adguardhome",
+                "type": "udp",
+                "server": "192.168.1.6"
+            }
+        ],
     "rules": [
       {
         "outbound": "any",
@@ -64,7 +61,7 @@
         "rule_set": "self_direct",
         "action": "route",
         "server": "dns_adguardhome",
-        "strategy": "prefer_ipv6"
+        "strategy": "prefer_ipv4"
       },
       {
         "rule_set": "self_proxy",
@@ -86,6 +83,7 @@
       },
       {
         "rule_set": "geosite-geolocation-!cn",
+        "action": "route",
         "server": "dns_proxy"
       }
     ],

@@ -158,7 +158,8 @@
         "Japan",
         "America",
         "指定节点"
-      ]
+      ],
+      "default": "Singapore"
     },
     {
       "tag":"Telegram",

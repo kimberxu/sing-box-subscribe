@@ -42,7 +42,7 @@
       {
         "tag": "dns_adguardhome",
         "type": "udp",
-        "server": "192.168.1.6"
+        "server": "192.168.1.6",
         "detour": "➡️ 直连"
       }
     ],

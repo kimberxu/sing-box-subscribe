@@ -530,6 +530,10 @@
         "action": "hijack-dns"
       },
       {
+        "ip_is_private": true,
+        "outbound": "➡️ 直连"
+      },
+      {
         "rule_set": [
           "AWAvenue-Ads-Rule",
           "geosite-category-ads-all"

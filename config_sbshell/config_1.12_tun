@@ -22,7 +22,7 @@
     "servers": [
             {
                 "tag": "dns_proxy",
-                "type": "tls",
+                "type": "https",
                 "server": "8.8.8.8",
                 "detour": "🚀 节点选择"
             },
@@ -57,12 +57,60 @@
         "clash_mode": "Global",
         "server": "dns_proxy"
       },
-       {
-        "rule_set": "self_direct",
-        "action": "route",
-        "server": "dns_adguardhome",
-        "strategy": "prefer_ipv4"
+      {
+        "domain": "mb3admin.com",
+        "action": "predefined",
+        "rcode": "NOERROR",
+        "answer": "mb3admin.com. IN A 192.168.1.4"
       },
+      {
+        "domain_suffix": ".mb3admin.com",
+        "action": "predefined",
+        "rcode": "NOERROR",
+        "answer": "*.mb3admin.com. IN A 192.168.1.4"
+      },
+      {
+        "domain_suffix": ".sy.228778.xyz",
+        "action": "predefined",
+        "rcode": "NOERROR",
+        "answer": "*.sy.228778.xyz. IN A 192.168.2.5"
+      },
+      {
+        "domain": "adgsy.228778.xyz",
+        "action": "predefined",
+        "rcode": "NOERROR",
+        "answer": "adgsy.228778.xyz. IN A 192.168.2.5"
+      },
+      {
+        "domain": "ddnssy.228778.xyz",
+        "action": "predefined",
+        "rcode": "NOERROR",
+        "answer": "ddnssy.228778.xyz. IN A 192.168.2.5"
+      },
+      {
+        "domain": "ittoolsy.228778.xyz",
+        "action": "predefined",
+        "rcode": "NOERROR",
+        "answer": "ittoolsy.228778.xyz. IN A 192.168.2.5"
+      },
+      {
+        "domain": "resumesy.228778.xyz",
+        "action": "predefined",
+        "rcode": "NOERROR",
+        "answer": "resumesy.228778.xyz. IN A 192.168.2.5"
+      },
+      {
+        "domain": "firefoxsy.228778.xyz",
+        "action": "predefined",
+        "rcode": "NOERROR",
+        "answer": "firefoxsy.228778.xyz. IN A 192.168.2.5"
+      },     
+      {
+        "domain_suffix": ".228778.xyz",
+        "action": "predefined",
+        "rcode": "NOERROR",
+        "answer": "*.228778.xyz. IN A 192.168.1.6"
+      },            
       {
         "rule_set": "self_proxy",
         "action": "route",
@@ -88,6 +136,7 @@
       }
     ],
     "final": "dns_proxy",
+    "disable_cache": false,
     "strategy": "prefer_ipv4"
   },
   "inbounds": [

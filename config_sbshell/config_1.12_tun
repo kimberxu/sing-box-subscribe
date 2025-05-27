@@ -107,60 +107,6 @@
         "server": "dns_proxy"
       },
       {
-        "domain": "mb3admin.com",
-        "action": "predefined",
-        "rcode": "NOERROR",
-        "answer": "mb3admin.com. IN A 192.168.1.4"
-      },
-      {
-        "domain_suffix": ".mb3admin.com",
-        "action": "predefined",
-        "rcode": "NOERROR",
-        "answer": "*.mb3admin.com. IN A 192.168.1.4"
-      },
-      {
-        "domain_suffix": ".sy.228778.xyz",
-        "action": "predefined",
-        "rcode": "NOERROR",
-        "answer": "*.sy.228778.xyz. IN A 192.168.2.5"
-      },
-      {
-        "domain": "adgsy.228778.xyz",
-        "action": "predefined",
-        "rcode": "NOERROR",
-        "answer": "adgsy.228778.xyz. IN A 192.168.2.5"
-      },
-      {
-        "domain": "ddnssy.228778.xyz",
-        "action": "predefined",
-        "rcode": "NOERROR",
-        "answer": "ddnssy.228778.xyz. IN A 192.168.2.5"
-      },
-      {
-        "domain": "ittoolsy.228778.xyz",
-        "action": "predefined",
-        "rcode": "NOERROR",
-        "answer": "ittoolsy.228778.xyz. IN A 192.168.2.5"
-      },
-      {
-        "domain": "resumesy.228778.xyz",
-        "action": "predefined",
-        "rcode": "NOERROR",
-        "answer": "resumesy.228778.xyz. IN A 192.168.2.5"
-      },
-      {
-        "domain": "firefoxsy.228778.xyz",
-        "action": "predefined",
-        "rcode": "NOERROR",
-        "answer": "firefoxsy.228778.xyz. IN A 192.168.2.5"
-      },     
-      {
-        "domain_suffix": ".228778.xyz",
-        "action": "predefined",
-        "rcode": "NOERROR",
-        "answer": "*.228778.xyz. IN A 192.168.1.6"
-      },            
-      {
         "rule_set": "self_proxy",
         "action": "route",
         "server": "dns_proxy",

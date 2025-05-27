@@ -54,43 +54,43 @@
         "domain_suffix": ".mb3admin.com",
         "action": "predefined",
         "rcode": "NOERROR",
-        "answer": "@ 30 IN A 192.168.1.4"
+        "answer": ["@ 30 IN A 192.168.1.4"]
       },
       {
         "domain_suffix": ".sy.228778.xyz",
         "action": "predefined",
         "rcode": "NOERROR",
-        "answer": "*@ 30 IN A 192.168.2.5"
+        "answer": ["*@ 30 IN A 192.168.2.5"]
       },
       {
         "domain": "adgsy.228778.xyz",
         "action": "predefined",
         "rcode": "NOERROR",
-        "answer": "@ 30 IN A 192.168.2.5"
+        "answer": ["@ 30 IN A 192.168.2.5"]
       },
       {
         "domain": "ddnssy.228778.xyz",
         "action": "predefined",
         "rcode": "NOERROR",
-        "answer": "@ 30 IN A 192.168.2.5"
+        "answer": ["@ 30 IN A 192.168.2.5"]
       },
       {
         "domain": "ittoolsy.228778.xyz",
         "action": "predefined",
         "rcode": "NOERROR",
-        "answer": "@ 30 IN A 192.168.2.5"
+        "answer": ["@ 30 IN A 192.168.2.5"]
       },
       {
         "domain": "resumesy.228778.xyz",
         "action": "predefined",
         "rcode": "NOERROR",
-        "answer": "@ 30 IN A 192.168.2.5"
+        "answer": ["@ 30 IN A 192.168.2.5"]
       },
       {
         "domain": "firefoxsy.228778.xyz",
         "action": "predefined",
         "rcode": "NOERROR",
-        "answer": "@ 30 IN A 192.168.2.5"
+        "answer": ["@ 30 IN A 192.168.2.5"]
       },
       {
         "domain_suffix": ".228778.xyz",

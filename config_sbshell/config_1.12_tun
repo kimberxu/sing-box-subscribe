@@ -48,7 +48,7 @@
         "domain": "mb3admin.com",
         "action": "predefined",
         "rcode": "NOERROR",
-        "answer": ["@ 30 IN A 192.168.1.4"]  // 简化域名写法，用 @ 代替完整域名
+        "answer": ["@ 30 IN A 192.168.1.4"]
       },
       {
         "domain_suffix": ".mb3admin.com",

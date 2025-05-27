@@ -499,8 +499,7 @@
         "{all}"
       ],
       "filter":[
-        {"action":"include","keywords":["🇹🇼|TW|tw|台湾|臺灣|台|Taiwan"]},
-        {"action":"exclude","keywords":["2x"]}
+        {"action":"include","keywords":["🇹🇼|TW|tw|台湾|臺灣|台|Taiwan"]}
       ]
     },
     {

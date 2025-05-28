@@ -93,7 +93,7 @@
         "rule_set": "self_proxy",
         "action": "route",
         "server": "dns_proxy",
-        "strategy": "prefer_ipv4"
+        "strategy": "ipv4_only"
       },
       {
         "rule_set": [
@@ -105,12 +105,13 @@
       {
         "rule_set": "geosite-cn",
         "action": "route",
-        "server": "dns_direct"
+        "server": "dns_adguardhome"
       },
       {
         "rule_set": "geosite-geolocation-!cn",
         "action": "route",
-        "server": "dns_proxy"
+        "server": "dns_proxy",
+        "strategy": "ipv4_only"
       }
     ],
     "final": "dns_proxy",

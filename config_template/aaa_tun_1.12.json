@@ -90,6 +90,12 @@
         ]
       },
       {
+        "rule_set": "self_direct",
+        "action": "route",
+        "server": "dns_adguardhome",
+        "strategy": "prefer_ipv4"
+      },
+      {
         "rule_set": "self_proxy",
         "action": "route",
         "server": "dns_proxy",
@@ -105,7 +111,8 @@
       {
         "rule_set": "geosite-cn",
         "action": "route",
-        "server": "dns_adguardhome"
+        "server": "dns_adguardhome",
+        "strategy": "prefer_ipv4"
       },
       {
         "rule_set": "geosite-geolocation-!cn",
@@ -116,7 +123,7 @@
     ],
     "final": "dns_proxy",
     "disable_cache": false,
-    "strategy": "prefer_ipv4"
+    "strategy": "ipv4_only"
   },
   "inbounds": [
     {

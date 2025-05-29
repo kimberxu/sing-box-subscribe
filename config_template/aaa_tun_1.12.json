@@ -1,6 +1,7 @@
 {
   "log": {
-    "level": "info",
+    "level": "trace",
+    "output": "/etc/sing-box/sing_box.log",
     "timestamp": true
   },
   "experimental": {

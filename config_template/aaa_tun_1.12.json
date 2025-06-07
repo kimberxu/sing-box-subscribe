@@ -128,7 +128,7 @@
       }
     ],
     "final": "dns_proxy",
-    "disable_cache": false,
+    "disable_cache": true,
     "strategy": "ipv4_only"
   },
   "inbounds": [
@@ -570,6 +570,12 @@
         ],
         "outbound": "➡️ 直连"
       },
+      {
+        "domain_suffix": [
+          "infini.money"
+        ],
+        "outbound": "🇯🇵 日本节点自动"
+      },  
       {
         "rule_set": "self_direct",
         "outbound": "➡️ 直连"

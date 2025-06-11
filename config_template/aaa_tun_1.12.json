@@ -147,7 +147,21 @@
       "tag": "mixed-in",
       "type": "mixed",
       "listen": "0.0.0.0",
-      "listen_port": 7893
+      "listen_port": 7893,
+      "users": [
+        {
+          "username": "rule",
+          "password": ""
+        },
+        {
+          "username": "proxy",
+          "password": ""
+        },
+        {
+          "username": "direct",
+          "password": ""
+        }        
+      ]   
     }
   ],
   "outbounds": [
@@ -551,7 +565,7 @@
           "geosite-category-ads-all"
         ],
         "clash_mode": "global",
-        "outbound": "Proxy"
+        "outbound": "🚀 节点选择"
       },
       {
         "clash_mode": "direct",
@@ -560,6 +574,20 @@
       {
         "clash_mode": "global",
         "outbound": "GLOBAL"
+      },
+      {
+        "auth_user": [
+          "direct"
+          ],
+        "action": "route",
+        "outbound": "➡️ 直连"
+      },
+      {
+        "auth_user": [
+          "proxy"
+          ],
+        "action": "route",
+        "outbound": "🚀 节点选择"
       },
       {
         "domain": [

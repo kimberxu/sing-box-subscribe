@@ -150,16 +150,16 @@
       "listen_port": 7893,
       "users": [
         {
-          "username": "rule",
-          "password": ""
+          "username": "user-r",
+          "password": "123456"
         },
         {
-          "username": "proxy",
-          "password": ""
+          "username": "user-p",
+          "password": "123456"
         },
         {
-          "username": "direct",
-          "password": ""
+          "username": "user-d",
+          "password": "123456"
         }        
       ]   
     }
@@ -577,16 +577,14 @@
       },
       {
         "auth_user": [
-          "direct"
+          "user-d"
           ],
-        "action": "route",
         "outbound": "➡️ 直连"
       },
       {
         "auth_user": [
-          "proxy"
+          "user-p"
           ],
-        "action": "route",
         "outbound": "🚀 节点选择"
       },
       {

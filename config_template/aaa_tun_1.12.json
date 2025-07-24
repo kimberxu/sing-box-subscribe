@@ -59,43 +59,6 @@
         "server": "dns_proxy"
       },
       {
-        "domain_suffix": [
-          ".228778.xyz",
-          ".local.always-lucky.top",
-          "mb3admin.com"
-        ],
-        "query_type": [
-          "AAAA"
-        ],
-        "action": "reject"
-      },
-      {
-        "domain_regex": [
-          "^[a-zA-Z0-9.-]+sy\\.228778\\.xyz$"
-        ],
-        "action": "predefined",
-        "rcode": "NOERROR",
-        "answer": [
-          "@ 30 IN A 192.168.2.5"
-        ]
-      },
-      {
-        "domain_suffix": ".228778.xyz",
-        "action": "predefined",
-        "rcode": "NOERROR",
-        "answer": [
-          "@ 30 IN A 192.168.1.6"
-        ]
-      },
-      {
-        "domain_suffix": "mb3admin.com",
-        "action": "predefined",
-        "rcode": "NOERROR",
-        "answer": [
-          "@ 30 IN A 192.168.1.4"
-        ]
-      },
-      {
         "rule_set": "self_direct",
         "action": "route",
         "server": "dns_adguardhome",

@@ -526,7 +526,7 @@
     "final": "🐠 兜底策略",
     "rules": [
       {
-        "inbound": ["tun-in", "mixed-in"],
+        "inbound": ["tproxy-in", "mixed-in"],
         "action": "sniff"
       },
       {

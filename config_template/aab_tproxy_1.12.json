@@ -642,14 +642,14 @@
         "tag": "self_direct",
         "type": "remote",
         "format": "binary",
-        "url": "https://bbb.20241108.xyz/d.srs?auth_key=a1b2c3d4-e5f6-g7h8-i9j0-k1l2m3n4o5p6",
+        "url": "https://r2bbb.228998.xyz/d.srs?auth_key=a1b2c3d4-e5f6-g7h8-i9j0-k1l2m3n4o5p6",
         "download_detour": "➡️ 直连"
       },
       {
         "tag": "self_proxy",
         "type": "remote",
         "format": "binary",
-        "url": "https://bbb.20241108.xyz/p.srs?auth_key=a1b2c3d4-e5f6-g7h8-i9j0-k1l2m3n4o5p6",
+        "url": "https://r2bbb.228998.xyz/p.srs?auth_key=a1b2c3d4-e5f6-g7h8-i9j0-k1l2m3n4o5p6",
         "download_detour": "➡️ 直连"
       },
       {
@@ -802,3 +802,4 @@
     ]
   }
 }
+

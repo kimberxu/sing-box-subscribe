@@ -432,7 +432,7 @@
             "🇭🇰|HK|hk|香港|港|HongKong"
           ]
         },
-        {"action":"exclude","keywords":["2x"]}
+        {"action":"exclude","keywords":["洛|3x|5x"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "2m",
@@ -446,7 +446,7 @@
       ],
       "filter": [
         {"action":"include","keywords":["🇸🇬|SG|sg|新加坡|狮|Singapore"]},
-        {"action":"exclude","keywords":["2x"]}
+        {"action":"exclude","keywords":["3x|5x"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "2m",

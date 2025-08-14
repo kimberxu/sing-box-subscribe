@@ -102,7 +102,6 @@
     "disable_cache": false,
     "strategy": "ipv4_only",
     "client_subnet": "211.136.192.6",
-    "cache_capacity": 2048,
     "reverse_mapping": true
   },
   "inbounds": [

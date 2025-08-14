@@ -26,29 +26,35 @@
   },
   "dns": {
     "servers": [
-            {
-                "tag": "dns_proxy",
-                "type": "https",
-                "server": "8.8.8.8",
-                "detour": "🚀 节点选择"
-            },
-            {
-                "tag": "dns_direct",
-                "type": "https",
-                "server": "dns.alidns.com",
-                "domain_resolver": "dns_resolver"
-         },
-            {
-                "tag": "dns_resolver",
-                "type": "udp",
-                "server": "211.136.192.6"
-            },
-            {
-                "tag": "dns_adguardhome",
-                "type": "udp",
-                "server": "192.168.2.6"
-            }
-        ],
+      {
+        "tag": "dns_proxy",
+        "type": "https",
+        "server": "8.8.8.8",
+        "detour": "🇸🇬 自动新加坡"
+      },
+      {
+        "tag": "dns_direct",
+        "type": "https",
+        "server": "dns.alidns.com",
+        "domain_resolver": "dns_resolver"
+      },
+      {
+        "tag": "dns_tencent",
+        "type": "https",
+        "server": "doh.pub",
+        "domain_resolver": "dns_resolver"
+      },
+      {
+        "tag": "dns_resolver",
+        "type": "udp",
+        "server": "211.136.192.6"
+      },
+      {
+        "tag": "dns_adguardhome",
+        "type": "udp",
+        "server": "192.168.2.6"
+      }
+    ],
     "rules": [
       {
         "clash_mode": "Direct",
@@ -95,7 +101,9 @@
     "final": "dns_proxy",
     "disable_cache": false,
     "strategy": "ipv4_only",
-    "client_subnet": "211.136.192.6"
+    "client_subnet": "211.136.192.6",
+    "cache_capacity": 2048,
+    "reverse_mapping": true
   },
   "inbounds": [
     {

@@ -30,14 +30,20 @@
                 "tag": "dns_proxy",
                 "type": "https",
                 "server": "8.8.8.8",
-                "detour": "🚀 节点选择"
+                "detour": "🇸🇬 自动新加坡"
             },
             {
                 "tag": "dns_direct",
                 "type": "https",
                 "server": "dns.alidns.com",
                 "domain_resolver": "dns_resolver"
-         },
+            },
+            {
+                "tag": "dns_tencent",
+                "type": "https",
+                "server": "doh.pub",
+                "domain_resolver": "dns_resolver"
+            },            
             {
                 "tag": "dns_resolver",
                 "type": "udp",
@@ -95,7 +101,9 @@
     "final": "dns_proxy",
     "disable_cache": false,
     "strategy": "ipv4_only",
-    "client_subnet": "211.136.192.6"
+    "client_subnet": "211.136.192.6",
+    "cache_capacity": 4096,
+    "reverse_mapping": true
   },
   "inbounds": [
     {
@@ -547,7 +555,7 @@
   ],
   "route": {
     "default_domain_resolver": {
-      "server": "dns_resolver",
+      "server": "dns_tencent",
       "rewrite_ttl": 60,
       "client_subnet": "211.136.192.6"
     },
